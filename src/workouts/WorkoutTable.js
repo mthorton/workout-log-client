@@ -1,5 +1,6 @@
 import React from 'react';
 import {Table, Button} from 'reactstrap';
+import WorkoutEdit from './WorkoutEdit';
 
 const WorkoutTable = (props) => {
 
@@ -23,7 +24,7 @@ const WorkoutTable = (props) => {
                     <td>{workout.description}</td>
                     <td>{workout.definition}</td>
                     <td>
-                        <Button color="warning">Update</Button>
+                        <Button color="warning" onClick={() => {props.editUpdateWorkout(workout); props.updateOn()}}>Update</Button>
                         <Button color="danger" onClick={() => {deleteWorkout(workout)}}>Delete</Button>
                     </td>
                 </tr>
